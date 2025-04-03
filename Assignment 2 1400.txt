@@ -1,0 +1,1271 @@
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>  
+
+
+int main (void) {
+  char n; 
+  float firstnumber = 0.00;
+  float secondnumber = 0.00;
+  float square;
+  float vari1 = 0.00;
+  float vari2 = 0.00;
+  float vari3 = 0.00;
+  float vari4 = 0.00;
+  float vari5 = 0.00;  
+  float answer;
+  char operation;
+  char selction;
+  char variable;
+  char option;
+  char a;
+  char b;
+  char c;
+  char d;
+  char e;
+  char choice;
+  char choice1;
+  char choice2;
+  char choice3;
+
+  printf("");
+
+  printf("Welcome to my Command-Line Calculator(CLC)\n");
+  printf("Developer : Parth Desai\n");
+  printf("Version: 2\n");
+  printf("Date: November 15th,2020\n");
+  printf("--------------------------------------------\n");
+  printf(" \n");
+  printf("Select one of the following items:\n");
+  printf("B) - Binary Mathematical Operations, such as addition and subtractions.\n");
+  printf("U) - Unary Mathematical Operations, such as square root and log.\n");
+  printf("A) - Advance Mathematical Operations, using variables and arrays.\n");
+  printf("V) - Define variables and assign them values.\n");
+  printf("E) - Exit\n");
+
+  while (n != 'E'|| n != 'e'){
+  scanf("%c", &n);
+  if(n == 'B' || n == 'b'){
+     printf("Please enter the first number:\n");
+      scanf("%f", &firstnumber);
+      printf("Please enter the operation ( + , - , * , / ,%%, P (for power) , X (for maximum) , I (for minimum) ):\n");
+      scanf("%s", &operation);
+          if(operation == '+'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = (firstnumber + secondnumber);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+          else if(operation == '-'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber - secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+          else if(operation == '*'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber * secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+          else if(operation == '/'){
+            printf("Please enter the second number (non-zero): \n");
+            scanf("%f", &secondnumber);
+            if(secondnumber == 0){
+              printf("Please enter the second number (non-zero): \n");
+              scanf("%f", &secondnumber);
+              float answer = firstnumber / secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            else {
+            float answer = firstnumber / secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+          }
+          else if(operation == 'P'|| operation == 'p'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = pow(firstnumber,secondnumber);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+          else if(operation == 'X'|| operation == 'x'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            if ( firstnumber > secondnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            
+          }
+          
+          else if(operation == 'I'|| operation == 'i'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            if ( firstnumber > secondnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+            }
+            }
+  }// selction b's end bracket
+
+   else if (n == 'U'|| n == 'u'){
+      printf("Please enter the operation ( S (for square root) , L (for logarithm) , E (for exponential) , C (for ceil) , F (for floor) ): \n");
+      scanf("%s", &selction);
+      if (selction == 's'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        if (square < 0){
+          printf("Please enter a positive integer: \n");
+          scanf("%f", &square);
+          float answer = sqrt(square);
+          printf("The result is: %.2f\n", answer);
+          printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+        }
+        float answer = sqrt(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'S'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        if (square < 0){
+          printf("Please enter a positive integer: \n");
+          scanf("%f", &square);
+          float answer = sqrt(square);
+          printf("The result is: %.2f\n", answer);
+          printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+        }
+        float answer = sqrt(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'L'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        if (square < 0){
+          printf("Please enter a positive integer: \n");
+          scanf("%f", &square);
+          float answer = log(square);
+          printf("The result is: %.2f\n", answer);
+          printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+        }
+        float answer = log(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'l'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        if (square < 0){
+          printf("Please enter a positive integer: \n");
+          float answer = log(square);
+          printf("The result is: %.2f\n", answer);
+          printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+        }
+        float answer = log(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'E'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        if (square < 0){
+          printf("Please enter a positive integer: \n");
+          float answer = exp(square);
+          printf("The result is: %.2f\n", answer);
+          printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+        }
+        float answer = exp(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'e'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        if (square < 0){
+          printf("Please enter a positive integer: \n");
+          float answer = exp(square);
+          printf("The result is: %.2f\n", answer);
+          printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+        }
+        float answer = exp(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'C'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        float answer = ceil(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'c'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        float answer = ceil(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'F'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        float answer = floor(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'f'){
+        printf("Please enter a positive integer: \n");
+        scanf("%f", &square);
+        float answer = floor(square);
+        printf("The result is: %.2f\n", answer);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+
+    }// end for U selction
+
+
+     else if (n == 'V' || n == 'v'){
+      printf("Please enter the name of the variable ( A single character between 'a' to 'e' ): \n");
+      scanf("%s", &variable);
+      if (variable == 'a'){
+        a = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari1);
+        printf("Variable %s ", &a);
+        printf("is set to: %.2f\n", vari1);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'b'){
+        b = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari2);
+        printf("Variable %s ", &b);
+        printf("is set to: %.2f\n", vari2);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'c'){
+        c = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari3);
+        printf("Variable %s ", &c);
+        printf("is set to: %.2f\n", vari3);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'd'){
+        d = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari4);
+        printf("Variable %s ", &d);
+        printf("is set to: %.2f\n", vari4);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'e'){
+        e = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari5);
+        printf("Variable %s ", &e);
+        printf("is set to: %.2f\n", vari5);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable != 'a' && variable != 'b'  && variable != 'c' && variable != 'd' && variable != 'e'){
+        printf("Please enter the name of the variable ( A single character between 'a' to 'e' ): \n");
+      scanf("%s", &variable);
+      if (variable == 'a'){
+        a = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari1);
+        printf("Variable %s ", &a);
+        printf("is set to: %.2f\n", vari1);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'b'){
+        b = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari2);
+        printf("Variable %s ", &b);
+        printf("is set to: %.2f", vari2);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'c'){
+        c = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari3);
+        printf("Variable %s ", &c);
+        printf("is set to: %.2f", vari3);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'd'){
+        d = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari4);
+        printf("Variable %s ", &d);
+        printf("is set to: %.2f", vari4);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (variable == 'e'){
+        e = variable;
+        printf("Please enter a value to assign to the variable: \n");
+        scanf("%f", &vari5);
+        printf("Variable %s ", &e);
+        printf("is set to: %.2f", vari5);
+        printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      }
+    } //end for v selection
+    else if (n=='A'|| n == 'a'){ 
+      printf("Select one of the following items: \n");
+      printf("B) - Binary Mathematical Operations, such as addition and subtraction. \n");
+      printf("U) - Unary Mathematical Operations, such as square root, and log. \n");
+      printf("E) - Exit and back to the main menu \n");
+      while (option != 'E'|| option != 'e'){
+        scanf("%s", &option);
+        if (option == 'b'|| option == 'B'){
+          printf("Do you want your first integer to be a variable or your own number (type ""v"" for variable and ""i"" for your own integer)\n");
+          scanf("%s", &choice);
+          if (choice == 'v'|| choice == 'V'){
+            printf("Do you want your second integer to be a variable or your own number (type ""v"" for variable and ""i"" for your own integer)\n");
+            scanf("%s", &choice1);
+            if (choice1 == 'v'||choice1 == 'V'){
+              printf("Please enter the first variable name ('a' to 'e'):\n");
+              scanf("%s", &choice2);
+              if(choice2 == 'a'|| choice2 == 'A'){
+                firstnumber = vari1;
+              }
+              if(choice2 == 'b'|| choice2 == 'B'){
+                firstnumber = vari2;
+              }
+              if(choice2 == 'c'|| choice2 == 'C'){
+                firstnumber = vari3;
+              }
+              if(choice2 == 'd'|| choice2 == 'D'){
+                firstnumber = vari4;
+              }
+              if(choice2 == 'e'|| choice2 == 'E'){
+                firstnumber = vari5;
+              }
+              printf("Please enter the operation ( + , - , * , / ,%%, P (for power) , X (for maximum) , I (for minimum) ):\n");
+              scanf("%s", &operation);
+               if(operation == '+'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+                float answer = firstnumber + secondnumber;
+                printf("The result is: %.2f\n", answer);
+                printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+               }
+               else if(operation == '-'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+                float answer = firstnumber - secondnumber;
+                printf("The result is: %.2f\n", answer);
+                printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+               }
+               
+               else if(operation == '*'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+                float answer = firstnumber * secondnumber;
+                printf("The result is: %.2f\n", answer);
+                printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+               }
+          
+               else if(operation == '/'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+               
+                 if(secondnumber == 0){
+                 printf("Please enter the second variable name ('a' to 'e') (Make sure it is non-zero):\n");
+                 scanf("%s", &choice3);
+                 if(choice3 == 'a'|| choice3 == 'A'){
+                 secondnumber = vari1;
+                 }
+                 if(choice3 == 'b'|| choice3 == 'B'){
+                 secondnumber = vari2;
+                 }
+                 if(choice3 == 'c'|| choice3 == 'C'){
+                 secondnumber = vari3;
+                 }
+                 if(choice3 == 'd'|| choice3 == 'D'){
+                 secondnumber = vari4;
+                 }
+                 if(choice3 == 'e'|| choice3 == 'E'){
+                 secondnumber = vari5;
+                 }
+                 
+                 float answer = firstnumber / secondnumber;
+                 printf("The result is: %.2f\n", answer);
+                 printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+                }
+              float answer = firstnumber / secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            } 
+          
+           else if(operation == 'P'|| operation == 'p'){
+             printf("Please enter the second variable name ('a' to 'e') (Make sure it is non-zero):\n");
+             scanf("%s", &choice3);
+              if(choice3 == 'a'|| choice3 == 'A'){
+              secondnumber = vari1;
+              }
+             if(choice3 == 'b'|| choice3 == 'B'){
+             secondnumber = vari2;
+             }
+             if(choice3 == 'c'|| choice3 == 'C'){
+             secondnumber = vari3;
+             }
+             if(choice3 == 'd'|| choice3 == 'D'){
+             secondnumber = vari4;
+             }
+             if(choice3 == 'e'|| choice3 == 'E'){
+             secondnumber = vari5;
+             }
+             float answer = pow(firstnumber,secondnumber);
+             printf("The result is: %.2f\n", answer);
+             printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+
+          else if(operation == 'X'|| operation == 'x'){
+            printf("Please enter the second variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            secondnumber = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            secondnumber = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            secondnumber = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            secondnumber = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            secondnumber = vari5;
+            }
+            if ( firstnumber > secondnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+          }
+          else if(operation == 'I'|| operation == 'i'){
+            printf("Please enter the second variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            secondnumber = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            secondnumber = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            secondnumber = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            secondnumber = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            secondnumber = vari5;
+            }
+            if ( firstnumber > secondnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = firstnumber;
+              printf("The result is: %f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            } 
+            }
+          }// end of choice 1 v
+            else if (choice1 == 'i'|| choice1 == 'I'){
+            printf("Please enter the first variable name ('a' to 'e'):\n");
+              scanf("%s", &choice2);
+              if(choice2 == 'a'|| choice2 == 'A'){
+                firstnumber = vari1;
+              }
+              if(choice2 == 'b'|| choice2 == 'B'){
+                firstnumber = vari2;
+              }
+              if(choice2 == 'c'|| choice2 == 'C'){
+                firstnumber = vari3;
+              }
+              if(choice2 == 'd'|| choice2 == 'D'){
+                firstnumber = vari4;
+              }
+              if(choice2 == 'e'|| choice2 == 'E'){
+                firstnumber = vari5;
+              }
+              printf("Please enter the operation ( + , - , * , / ,%%, P (for power) , X (for maximum) , I (for minimum) ):\n");
+              scanf("%s", &operation);
+               if(operation == '+'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber + secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == '-'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber - secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == '*'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber * secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == '/'){
+            printf("Please enter the second number (non-zero): \n");
+            scanf("%f", &secondnumber);
+            if(secondnumber == 0){
+              printf("Please enter the second number (non-zero): \n");
+              scanf("%f", &secondnumber);
+              float answer = firstnumber / secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else {
+            float answer = firstnumber / secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          }
+          else if(operation == 'P'|| operation == 'p'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = pow(firstnumber,secondnumber);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == 'X'|| operation == 'x'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            if ( firstnumber > secondnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+          }
+          else if(operation == 'I'|| operation == 'i'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            if ( firstnumber > secondnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            }
+            } // end of choice1 for i
+
+          } // end of chice V
+
+
+          else if (choice == 'i'|| choice == 'I'){
+            printf("Do you want your second integer to be a variable or your own number (type ""v"" for variable and ""i"" for your own integer)\n");
+            scanf("%s", &choice1);
+            if (choice1 == 'v'||choice1 == 'V'){
+              printf("Please enter the first integer:\n");
+              scanf("%f", &firstnumber);
+              if(operation == '+'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+                float answer = firstnumber + secondnumber;
+                printf("The result is: %.2f\n", answer);
+                printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+               }
+               else if(operation == '-'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+                float answer = firstnumber - secondnumber;
+                printf("The result is: %.2f\n", answer);
+                printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+               }
+               
+               else if(operation == '*'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+                float answer = firstnumber * secondnumber;
+                printf("The result is: %.2f\n", answer);
+                printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+               }
+          
+               else if(operation == '/'){
+                printf("Please enter the second variable name ('a' to 'e'):\n");
+                scanf("%s", &choice3);
+                if(choice3 == 'a'|| choice3 == 'A'){
+                secondnumber = vari1;
+                }
+                if(choice3 == 'b'|| choice3 == 'B'){
+                secondnumber = vari2;
+                }
+                if(choice3 == 'c'|| choice3 == 'C'){
+                secondnumber = vari3;
+                }
+                if(choice3 == 'd'|| choice3 == 'D'){
+                secondnumber = vari4;
+                }
+                if(choice3 == 'e'|| choice3 == 'E'){
+                secondnumber = vari5;
+                }
+               
+                 if(secondnumber == 0){
+                 printf("Please enter the second variable name ('a' to 'e') (Make sure it is non-zero):\n");
+                 scanf("%s", &choice3);
+                 if(choice3 == 'a'|| choice3 == 'A'){
+                 secondnumber = vari1;
+                 }
+                 if(choice3 == 'b'|| choice3 == 'B'){
+                 secondnumber = vari2;
+                 }
+                 if(choice3 == 'c'|| choice3 == 'C'){
+                 secondnumber = vari3;
+                 }
+                 if(choice3 == 'd'|| choice3 == 'D'){
+                 secondnumber = vari4;
+                 }
+                 if(choice3 == 'e'|| choice3 == 'E'){
+                 secondnumber = vari5;
+                 }
+                 
+                 float answer = firstnumber / secondnumber;
+                 printf("The result is: %.2f\n", answer);
+                 printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+                }
+              float answer = firstnumber / secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            } 
+          
+           else if(operation == 'P'|| operation == 'p'){
+             printf("Please enter the second variable name ('a' to 'e') (Make sure it is non-zero):\n");
+             scanf("%s", &choice3);
+              if(choice3 == 'a'|| choice3 == 'A'){
+              secondnumber = vari1;
+              }
+             if(choice3 == 'b'|| choice3 == 'B'){
+             secondnumber = vari2;
+             }
+             if(choice3 == 'c'|| choice3 == 'C'){
+             secondnumber = vari3;
+             }
+             if(choice3 == 'd'|| choice3 == 'D'){
+             secondnumber = vari4;
+             }
+             if(choice3 == 'e'|| choice3 == 'E'){
+             secondnumber = vari5;
+             }
+             float answer = pow(firstnumber,secondnumber);
+             printf("The result is: %.2f\n", answer);
+             printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+
+          else if(operation == 'X'|| operation == 'x'){
+            printf("Please enter the second variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            secondnumber = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            secondnumber = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            secondnumber = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            secondnumber = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            secondnumber = vari5;
+            }
+            if ( firstnumber > secondnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+          }
+          else if(operation == 'I'|| operation == 'i'){
+            printf("Please enter the second variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            secondnumber = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            secondnumber = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            secondnumber = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            secondnumber = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            secondnumber = vari5;
+            }
+            if ( firstnumber > secondnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            } 
+            }
+
+            }
+            else if (choice1 == 'i'|| choice1 == 'I'){
+              printf("Please enter the first integer:\n");
+              scanf("%f", &firstnumber);
+              printf("Please enter the operation ( + , - , * , / ,%%, P (for power) , X (for maximum) , I (for minimum) ):\n");
+              scanf("%s", &operation);
+               if(operation == '+'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber + secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == '-'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber - secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == '*'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = firstnumber * secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == '/'){
+            printf("Please enter the second number (non-zero): \n");
+            scanf("%f", &secondnumber);
+            if(secondnumber == 0){
+              printf("Please enter the second number (non-zero): \n");
+              scanf("%f", &secondnumber);
+              float answer = firstnumber / secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else {
+            float answer = firstnumber / secondnumber;
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          }
+          else if(operation == 'P'|| operation == 'p'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            float answer = pow(firstnumber,secondnumber);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+          }
+          else if(operation == 'X'|| operation == 'x'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            if ( firstnumber > secondnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+          }
+          else if(operation == 'I'|| operation == 'i'){
+            printf("Please enter the second number:\n");
+            scanf("%f", &secondnumber);
+            if ( firstnumber > secondnumber){
+              float answer = secondnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else if ( secondnumber > firstnumber){
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            else{
+              float answer = firstnumber;
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+            }
+            }
+            }
+          }
+        }// b bracket for a selection
+        else if (option == 'u'|| option == 'U'){
+          printf("Do you want your integer to be a variable or your own number (type ""v"" for variable and ""i"" for your own integer)\n");
+          scanf("%s", &choice);
+          if (choice == 'v'|| choice == 'V'){
+            printf("Please enter the operation ( S (for square root) , L (for logarithm) , E (for exponential) , C (for ceil) , F (for floor) ): \n");
+            scanf("%s", &selction);
+            if (selction == 's'|| selction == 'S'){
+             printf("Please enter the variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            square = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            square = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            square = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            square = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            square = vari5;
+            }
+             scanf("%f", &square);
+              if (square < 0){
+              printf("Please enter the variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            square = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            square = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            square = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            square = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            square = vari5;
+            }
+              scanf("%f", &square);
+              float answer = sqrt(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+              }
+              float answer = sqrt(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+           }
+          if (selction == 'l'|| selction == 'L'){
+             printf("Please enter the variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            square = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            square = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            square = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            square = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            square = vari5;
+            }
+            scanf("%f", &square);
+              if (square < 0){
+              printf("Please enter the variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            square = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            square = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            square = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            square = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            square = vari5;
+            }
+              scanf("%f", &square);
+              float answer = log(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+              }
+              float answer = log(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+           }
+           else if (selction == 'e'|| selction == 'E'){
+             printf("Please enter the variable name ('a' to 'e') :\n");
+             scanf("%s", &choice3);
+             if(choice3 == 'a'|| choice3 == 'A'){
+             square = vari1;
+             }
+             if(choice3 == 'b'|| choice3 == 'B'){
+             square = vari2;
+             }
+             if(choice3 == 'c'|| choice3 == 'C'){
+             square = vari3;
+             }
+             if(choice3 == 'd'|| choice3 == 'D'){
+             square = vari4;
+             }
+             if(choice3 == 'e'|| choice3 == 'E'){
+             square = vari5;
+             }
+              scanf("%f", &square);
+               if (square < 0){
+               printf("Please enter the variable name ('a' to 'e') :\n");
+               scanf("%s", &choice3);
+               if(choice3 == 'a'|| choice3 == 'A'){
+               square = vari1;
+               }
+               if(choice3 == 'b'|| choice3 == 'B'){
+               square = vari2;
+               }
+               if(choice3 == 'c'|| choice3 == 'C'){
+               square = vari3;
+               }
+               if(choice3 == 'd'|| choice3 == 'D'){
+               square = vari4;
+               }
+               if(choice3 == 'e'|| choice3 == 'E'){
+               square = vari5;
+               }
+              scanf("%f", &square);
+              float answer = exp(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+              }
+            float answer = exp(square);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+           }
+           else if (selction == 'C' || selction == 'c'){
+             printf("Please enter the variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            square = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            square = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            square = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            square = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            square = vari5;
+            }
+            float answer = ceil(square);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'F' || selction == 'f'){
+             printf("Please enter the variable name ('a' to 'e') :\n");
+            scanf("%s", &choice3);
+            if(choice3 == 'a'|| choice3 == 'A'){
+            square = vari1;
+            }
+            if(choice3 == 'b'|| choice3 == 'B'){
+            square = vari2;
+            }
+            if(choice3 == 'c'|| choice3 == 'C'){
+            square = vari3;
+            }
+            if(choice3 == 'd'|| choice3 == 'D'){
+            square = vari4;
+            }
+            if(choice3 == 'e'|| choice3 == 'E'){
+            square = vari5;
+            }
+            float answer = floor(square);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+          }
+          else if (choice == 'i' || choice == 'I'){
+           printf("Please enter the operation ( S (for square root) , L (for logarithm) , E (for exponential) , C (for ceil) , F (for floor) ): \n");
+           scanf("%s", &selction);
+
+            if (selction == 's'|| selction == 'S'){
+              printf("Please enter the intger:\n");
+             scanf("%f", &square);
+              if (square < 0){
+              printf("Please enter the intger:\n");
+               scanf("%f", &square);
+              float answer = sqrt(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+              }
+              float answer = sqrt(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+
+           }
+          else if (selction == 'l'|| selction == 'L'){
+             printf("Please enter the intger:\n");
+             scanf("%f", &square);
+              if (square < 0){
+              printf("Please enter the intger:\n");
+               scanf("%f", &square);
+              float answer = log(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+              }
+              float answer = log(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+           }
+           else if (selction == 'e'|| selction == 'E'){
+             printf("Please enter the intger:\n");
+             scanf("%f", &square);
+              if (square < 0){
+              printf("Please enter the intger:\n");
+               scanf("%f", &square);
+              float answer = exp(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+              }
+              float answer = exp(square);
+              printf("The result is: %.2f\n", answer);
+              printf("Please select your option ( B (Binary operation), U (Unary operation) , E (Exit))\n");
+           }
+           else if (selction == 'C' || selction == 'c'){
+             printf("Please enter the intger:\n");
+            scanf("%f", &square);
+            float answer = ceil(square);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+      }
+      else if (selction == 'F' || selction == 'f'){
+             printf("Please enter the intger:\n");
+            scanf("%f", &square);
+            float answer = floor(square);
+            printf("The result is: %.2f\n", answer);
+            printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+          }
+
+          }
+
+        }//u bracket for u selection
+        else if(option == 'E' || option == 'e'){
+            break;
+        }
+
+      }//while loop in a selection
+      printf("Please select your option ( B (Binary operation), U (Unary operation) , A (Advanced), V (Variables), E (Exit))\n");
+
+    }// a selection
+    else if(n == 'E' || n == 'e'){
+      break;
+    }
+
+  } // main while loop end bracket
+  printf("Thanks for using my Simple Calculator. Hope to see you soon again, Goodbye!");
+
+}// main program end bracket
+    
+  
+
+ 
+
+
+
+
